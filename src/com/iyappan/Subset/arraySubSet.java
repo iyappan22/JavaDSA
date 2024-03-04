@@ -8,7 +8,7 @@ import java.util.List;
 public class arraySubSet {
     public static void main(String [] args){
         int[] arr = {1,2,2};
-        List<List<Integer>> ans = arraySubSetDuplicate(arr);
+        List<List<Integer>> ans = arraySubSet(arr);
         System.out.println(ans);
     }
     static List<List<Integer>> arraySubSet(int[] arr){
@@ -17,8 +17,11 @@ public class arraySubSet {
 
         for (int num : arr){
             int n = outer.size();
+            System.out.println("sizen" + n);
             for (int i =0; i < n; i++){
+                System.out.println("outer" + outer);
                 List<Integer> inner = new ArrayList<>(outer.get(i));
+                System.out.println("inner" + outer.get(i));
                 inner.add(num);
                 outer.add(inner);
             }
